@@ -2,17 +2,18 @@ require 'ship'
 
 describe Ship do
 
-  let (:ship) {Ship.new(2, :ship, 0)}
-  let (:aircraftcarrier) {Ship.aircraftcarrier}
-  let (:battleship) {Ship.battleship}
-  let (:submarine) {Ship.submarine}
-  let (:destroyer) {Ship.destroyer}
-  let (:patrolboat) {Ship.patrolboat}
+  let (:ship) {Ship.new}
+  #let (:aircraftcarrier) {Ship.aircraftcarrier}
+  #let (:battleship) {Ship.battleship}
+  #let (:submarine) {Ship.submarine}
+  #let (:destroyer) {Ship.destroyer}
+  #let (:patrolboat) {Ship.patrolboat}
 
 
   context "On initialize a ship" do
 
     it "should have a size" do
+      expect(ship).to have_size
     end
 
     it "should have a name" do
