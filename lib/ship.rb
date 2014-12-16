@@ -1,10 +1,18 @@
 class Ship
 
-  def initialize
+  SHIPS = { patrol_boat: 2, destroyer: 3, submarine: 3, battleship: 4, aircraftcarrier: 5,}
+
+
+  attr_reader :size
+
+
+
+  def initialize(size)
   	has_size?
   	has_name?
     floating?
     @hit = false
+    @size = size
   end
 
   def has_size?
@@ -23,25 +31,27 @@ class Ship
     @floating = true
   end
 
-  def aircraftcarrier
-    @size = 5
+  def self.aircraftcarrier
+    new SHIPS[__method__]
   end
 
-  def battleship
-    @size = 4
+  def self.battleship
+    new SHIPS[__method__]
   end
 
-  def submarine
-    @size = 3
+  def self.submarine
+    new SHIPS[__method__]
   end
 
-  def destroyer
-    @size = 3
+  def self.destroyer
+    new SHIPS[__method__]
   end
 
-  def boat
-    @size = 2
+  def self.patrol_boat
+    new SHIPS[__method__]
   end
+
+
 
   def hit!
     @hit = true

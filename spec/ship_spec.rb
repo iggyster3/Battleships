@@ -2,7 +2,6 @@ require 'ship'
 
 describe Ship do
 
-  let (:ship) {Ship.new}
   #let (:aircraftcarrier) {Ship.aircraftcarrier}
   #let (:battleship) {Ship.battleship}
   #let (:submarine) {Ship.submarine}
@@ -11,6 +10,9 @@ describe Ship do
 
 
   context "On initialize a ship" do
+
+    let (:ship) {Ship.new(0)}
+
 
     it "should have a size" do
       expect(ship).to have_size
@@ -33,28 +35,30 @@ describe Ship do
   context "Different types of ships" do
 
     it "has a size of 5 if it is an aircraftcarrier" do
-      expect(ship.aircraftcarrier).to eq(5)
+      expect(Ship.aircraftcarrier.size).to eq(5)
     end
 
     it "has a size of 4 if it is a battleship" do
-      expect(ship.battleship).to eq(4)
+      expect(Ship.battleship.size).to eq(4)
     end
 
     it "has a size of 3 if it is a submarine" do
-      expect(ship.submarine).to eq(3)
+      expect(Ship.submarine.size).to eq(3)
     end
 
     it "has a size of 3 if it is a destroyer" do
-      expect(ship.destroyer).to eq(3)
+      expect(Ship.destroyer.size).to eq(3)
     end
 
     it "has a size of 2 if it is a patrol boat" do
-      expect(ship.boat).to eq(2)
+      expect(Ship.patrol_boat.size).to eq(2)
     end
 
   end
 
     context "During the game a ship" do
+
+    let (:ship) {Ship.new(0)}
 
     it "can take a hit" do
       ship.hit!
