@@ -2,10 +2,7 @@ class Ship
 
   SHIPS = { patrol_boat: 2, destroyer: 3, submarine: 3, battleship: 4, aircraftcarrier: 5,}
 
-
   attr_reader :size
-
-
 
   def initialize(size)
   	has_size?
