@@ -5,12 +5,11 @@ describe Board do
   let(:board) {Board.new}
   let(:cell) {double :cell}
   let(:ship) {double :ship}
-  let(:patrolboat) {double :patrolboat, size: 2 }
-  let(:battleship) {double :battleship, size: 4 }
 
   context "Upon initialize it" do
 
-    it "should have a grid" do
+    it "should have a grid 10x10" do
+      expect(board.size_grid).to eq(10)
     end
 
     it "should have cells" do
