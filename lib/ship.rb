@@ -4,6 +4,7 @@ class Ship
   	has_size?
   	has_name?
   	has_hit?
+    floating?
   end
 
   def has_size?
@@ -16,6 +17,10 @@ class Ship
 
   def has_hit?
   	@hit = false
+  end
+
+  def floating?
+    @floating = true
   end
 
 end

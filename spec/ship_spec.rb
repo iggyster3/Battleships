@@ -24,7 +24,8 @@ describe Ship do
       expect(ship).not_to have_hit
     end
 
-    it "should not be sunk" do
+    it "should be floating" do
+      expect(ship).to be_floating
     end
 
     it "should raise an error if wrong number of argument" do
