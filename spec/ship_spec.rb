@@ -17,12 +17,14 @@ describe Ship do
     end
 
     it "should have a name" do
+      expect(ship).to have_name
     end
 
-    it "has not hit" do
+    it "should not have a hit" do
+      expect(ship).not_to have_hit
     end
 
-    it "is not sunk" do
+    it "should not be sunk" do
     end
 
     it "should raise an error if wrong number of argument" do
