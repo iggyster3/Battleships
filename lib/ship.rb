@@ -3,8 +3,8 @@ class Ship
   def initialize
   	has_size?
   	has_name?
-  	has_hit?
     floating?
+    @hit = false
   end
 
   def has_size?
@@ -16,7 +16,7 @@ class Ship
   end
 
   def has_hit?
-  	@hit = false
+    @hit
   end
 
   def floating?
@@ -41,6 +41,10 @@ class Ship
 
   def boat
     @size = 2
+  end
+
+  def hit!
+    @hit = true
   end
 
 

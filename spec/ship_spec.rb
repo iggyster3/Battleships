@@ -56,11 +56,12 @@ describe Ship do
 
     context "During the game a ship" do
 
-    xit "can take a hit" do
-      
+    it "can take a hit" do
+      ship.hit!
+      expect(ship).to have_hit
     end
 
-    xit "can't take more hits than its size" do
+    it "can't take more hits than its size" do
     end
 
 
