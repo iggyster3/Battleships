@@ -28,41 +28,45 @@ describe Ship do
       expect(ship).to be_floating
     end
 
-    it "should raise an error if wrong number of argument" do
-    end
-
-    it "should have a name" do
-    end
-  end
-
-  context "During the game a ship" do
-
-    it "can take a hit" do
-    end
-
-    it "can't take more hits than its size" do
-    end
-
-
-    it "can be sunk if hits equal its size" do
-    end
   end
 
   context "Different types of ships" do
 
     it "has a size of 5 if it is an aircraftcarrier" do
+      expect(ship.aircraftcarrier).to eq(5)
     end
 
     it "has a size of 4 if it is a battleship" do
+      expect(ship.battleship).to eq(4)
     end
 
     it "has a size of 3 if it is a submarine" do
+      expect(ship.submarine).to eq(3)
     end
 
     it "has a size of 3 if it is a destroyer" do
+      expect(ship.destroyer).to eq(3)
     end
 
     it "has a size of 2 if it is a patrol boat" do
+      expect(ship.boat).to eq(2)
     end
+
   end
+
+    context "During the game a ship" do
+
+    xit "can take a hit" do
+      
+    end
+
+    xit "can't take more hits than its size" do
+    end
+
+
+    xit "can be sunk if hits equal its size" do
+    end
+
+  end
+
 end
