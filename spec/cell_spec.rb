@@ -18,12 +18,18 @@ describe Cell do
   context "during the game" do
 
     it "should change status when hit" do
+      cell.hit!
+      expect(cell).to be_hit
     end
 
     it "should change status when missed" do
+      cell.missed!
+      expect(cell).not_to be_hit
     end
 
-    it "to_s should return 'X' when hit" do
+    xit "to_s should return 'X' when hit" do
+      cell.hit!
+      expect(cell).to eq('x')
     end
   end
 
