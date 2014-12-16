@@ -3,14 +3,16 @@ require 'cell'
 describe Cell do
 
   let(:cell) {Cell.new}
-  let(:patrolboat) {double :patrolboat, receive_shot: "shot!"}
+  let(:ship) {double :ship}
 
   context "upon initialize it" do
 
     it "should have empty status" do
+      expect(cell).to be_empty
     end
 
     it "should have no ship" do
+      expect(cell).not_to have_ships
     end
   end
   context "during the game" do

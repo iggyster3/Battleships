@@ -61,11 +61,15 @@ describe Ship do
       expect(ship).to have_hit
     end
 
-    it "can't take more hits than its size" do
-    end
+    # it "can't take more hits than its size" do
+    #   expect(ship.ship_count).to eq(0)
+    #   ship.hit!
+    #   expect(ship.ship_count).to eq(1)
+    # end
 
 
     xit "can be sunk if hits equal its size" do
+
     end
 
   end
