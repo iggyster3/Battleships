@@ -7,7 +7,7 @@ class Ship
 
   def initialize(size)
   	has_name?
-    floating?
+    @floating = true
     @hit = false
     @size = size
     @hit_count = 0
@@ -26,7 +26,7 @@ class Ship
   end
 
   def floating?
-    @floating = true
+    @floating
   end
 
   def self.aircraftcarrier
@@ -51,6 +51,10 @@ class Ship
 
   def hit!
     @hit = true
+  end
+
+  def sunk!
+    @floating = false
   end
 
 

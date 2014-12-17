@@ -64,6 +64,10 @@ describe Ship do
     #   expect(ship.ship_count).to eq(1)
     # end
 
+    it "can be sunk" do
+      ship.sunk!
+      expect(ship).not_to be_floating
+    end
 
     xit "can be sunk if hits equal its size" do
     end
