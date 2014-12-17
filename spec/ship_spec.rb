@@ -2,13 +2,6 @@ require 'ship'
 
 describe Ship do
 
-  #let (:aircraftcarrier) {Ship.aircraftcarrier}
-  #let (:battleship) {Ship.battleship}
-  #let (:submarine) {Ship.submarine}
-  #let (:destroyer) {Ship.destroyer}
-  #let (:patrolboat) {Ship.patrolboat}
-
-
   context "On initialize a ship" do
 
     let (:ship) {Ship.new(0)}
@@ -23,7 +16,7 @@ describe Ship do
     end
 
     it "should not have a hit" do
-      expect(ship).not_to have_hit
+      expect(ship.hit_count).to eq(0)
     end
 
     it "should be floating" do

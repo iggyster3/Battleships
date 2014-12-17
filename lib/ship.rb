@@ -3,13 +3,14 @@ class Ship
   SHIPS = { patrol_boat: 2, destroyer: 3, submarine: 3, battleship: 4, aircraftcarrier: 5,}
 
   attr_reader :size
+  attr_accessor :hit_count
 
   def initialize(size)
-  	has_size?
   	has_name?
     floating?
     @hit = false
     @size = size
+    @hit_count = 0
   end
 
   def has_size?
@@ -47,8 +48,6 @@ class Ship
   def self.patrol_boat
     new SHIPS[__method__]
   end
-
-
 
   def hit!
     @hit = true

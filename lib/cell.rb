@@ -28,4 +28,8 @@ class Cell
   def missed!
   end
 
+  def shot!
+    @shot = true
+  end
+
 end

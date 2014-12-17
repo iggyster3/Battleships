@@ -35,7 +35,10 @@ describe Cell do
 
   context "if shot at and" do
 
-    it "empty" do
+    xit "empty" do
+      cell.shot!
+      expect(cell).to be_empty
+      
     end
 
     it "has ship" do
