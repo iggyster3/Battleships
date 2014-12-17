@@ -9,7 +9,7 @@ describe Board do
   context "Upon initialize it" do
 
     it "should have a grid 10x10" do
-      expect(board.size_grid).to eq(10)
+      expect(board.board_layout).to eq(10)
     end
 
     it "should have cells" do

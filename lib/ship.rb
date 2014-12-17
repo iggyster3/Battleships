@@ -1,6 +1,6 @@
 class Ship
 
-  SHIPS = { patrol_boat: 2, destroyer: 3, submarine: 3, battleship: 4, aircraftcarrier: 5,}
+  SHIPS = { patrol_boat: 2, destroyer: 3, submarine: 3, battleship: 4, aircraftcarrier: 5 }
 
   attr_reader :size
   attr_accessor :hit_count
@@ -49,12 +49,21 @@ class Ship
     new SHIPS[__method__]
   end
 
+  def shot!
+    @shot = true
+  end
+
   def hit!
     @hit = true
+    @hit_count += 1
   end
 
   def sunk!
     @floating = false
+  end
+
+  def sunk?
+    @hit_count == size ? true : false 
   end
 
 

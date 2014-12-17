@@ -47,6 +47,15 @@ describe Ship do
       expect(Ship.patrol_boat.size).to eq(2)
     end
 
+    it "can be sunk if hits equal its size" do
+      destroyer = Ship.destroyer
+      size = 3
+      expect(destroyer.hit_count).to eq(0)
+      size.times {destroyer.hit!}
+      expect(destroyer.hit_count).to eq(3)
+      expect(destroyer).to be_sunk
+    end
+
   end
 
     context "During the game a ship" do
@@ -69,8 +78,7 @@ describe Ship do
       expect(ship).not_to be_floating
     end
 
-    xit "can be sunk if hits equal its size" do
-    end
+
 
   end
 

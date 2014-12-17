@@ -4,8 +4,8 @@ class Board
 
   end
 
-  def size_grid
-    @grid = 10
+  def board_layout
+  	@board_layout = 10
   end
 
 end
