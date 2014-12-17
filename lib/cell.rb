@@ -32,4 +32,8 @@ class Cell
     @shot = true
   end
 
+  def value
+    'x'
+  end
+
 end

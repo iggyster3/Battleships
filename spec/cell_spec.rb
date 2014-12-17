@@ -35,13 +35,15 @@ describe Cell do
 
   context "if shot at and" do
 
-    xit "empty" do
+    it "empty" do
       cell.shot!
-      expect(cell).to be_empty
-      
+      expect(cell.value).to eq('x')
     end
 
     it "has ship" do
+      allow(cell).to receive(:ship)
+      cell.shot!
+      expect(cell.value).to eq('x')
     end
 
     it "is already shot" do

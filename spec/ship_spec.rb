@@ -66,7 +66,6 @@ describe Ship do
 
 
     xit "can be sunk if hits equal its size" do
-
     end
 
   end
