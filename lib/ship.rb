@@ -6,10 +6,10 @@ class Ship
   attr_accessor :hit_count
 
   def initialize(size)
-  	has_name?
     @floating = true
     @hit = false
     @size = size
+    @name = true
     @hit_count = 0
   end
 
@@ -63,7 +63,7 @@ class Ship
   end
 
   def sunk?
-    @hit_count == size ? true : false 
+    @hit_count == size ? true : false
   end
 
 

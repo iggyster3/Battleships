@@ -1,16 +1,19 @@
 class Cell
 
-	def initialize
-		@empty = true
-    @ship = false
+  attr_accessor :ship, :status
+
+	def initialize(ship, status)
+    empty?
+    @ship = ship
+    #@status = status
 	end
 
 	def empty?
-		@empty
+    true
 	end
 
 	def has_ships?
-    @ship
+    @ship = false
   end
 
   def hit!
@@ -28,8 +31,11 @@ class Cell
   def missed!
   end
 
-  def shot!
-    @shot = true
+  def incoming_shot!
+    #@shot = true
+    raise "Cell already shot" if @status != empty?
+    missed! if !ship
+    hit! if ship
   end
 
   def value

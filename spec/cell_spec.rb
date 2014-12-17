@@ -2,10 +2,11 @@ require 'cell'
 
 describe Cell do
 
-  let(:cell) {Cell.new}
+  #let(:cell) {Cell.new('destroyer', true)}
   let(:ship) {double :ship}
 
   context "upon initialize it" do
+    let(:cell) {Cell.new('destroyer', true)}
 
     it "should have empty status" do
       expect(cell).to be_empty
@@ -17,13 +18,15 @@ describe Cell do
   end
   context "during the game" do
 
+    let(:cell) {Cell.new('destroyer', true)}
+
     it "should change status when hit" do
       cell.hit!
       expect(cell).to be_hit
     end
 
     it "should change status when missed" do
-      #cell.missed!
+      cell.missed!
       expect(cell).not_to be_hit
     end
 
@@ -35,18 +38,22 @@ describe Cell do
 
   context "if shot at and" do
 
-    it "empty" do
-      cell.shot!
+    let(:cell) {Cell.new('destroyer', true)}
+
+    xit "empty" do
+      cell.incoming_shot!
       expect(cell.value).to eq('x')
     end
 
-    it "has ship" do
+    xit "has ship" do
       allow(cell).to receive(:ship)
-      cell.shot!
+      cell.incoming_shot!
       expect(cell.value).to eq('x')
     end
 
-    it "is already shot" do
+    xit "is already shot" do
+      cell.incoming_shot!
+      expect(cell).to eq()
     end
   end
 
