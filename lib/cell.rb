@@ -2,9 +2,9 @@ class Cell
 
   attr_accessor :ship, :status
 
-	def initialize(ship, status)
+	def initialize(content,status)
     empty?
-    @ship = ship
+    @content = content
     #@status = status
 	end
 
