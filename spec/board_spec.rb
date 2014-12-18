@@ -13,39 +13,17 @@ describe Board do
     end
 
     it "should have cells" do
+      allow(board).to receive(:cell)
     end
 
     it "should have 100 cells" do
+
     end
 
-    it "should give coordinates to cells" do
-    end
   end
 
   context "During the game it" do
 
-    it "should know how to convert coordinates" do
-    end
-
-    it "should be able to receive ship starting coordinate" do
-    end
-
-    it "should be able to place patrolboat coordinates" do
-    end
-
-    it "should be able to place battleship coordinates" do
-    end
-
-    it "should be able to verify if ship will not fit on board" do
-    end
-
-    it "should be able to verify is ship will fit on board" do
-    end
-
-    it "should be able to check if ship placement will clash" do
-    end
-
-    it "should be able to shoot at a coordinate" do
-    end
   end
+
 end
