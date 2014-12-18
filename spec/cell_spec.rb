@@ -34,9 +34,10 @@ describe Cell do
       expect(cell.content).to eq('x')
     end
 
-    xit "should not be able to be shoot twice" do
-      cell.incoming_shot!
-      expect(cell).to eq()
+    it "should not be able to be shoot twice" do
+      cell.hit!
+      cell.hit!
+      expect(lambda{cell.hit_count}).to raise_error(RuntimeError, 'Cell is hit more than once')
     end
 
   end
