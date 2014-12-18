@@ -3,7 +3,8 @@ require 'board'
 describe Board do
 
   let(:board) {Board.new}
-  let(:cell) {double :cell}
+  let(:cell) {Cell.new(1)}
+  #let(:cell) {double :cell}
   let(:ship) {double :ship}
 
   context "Upon initialize it" do
@@ -13,7 +14,8 @@ describe Board do
     end
 
     it "should have cells" do
-      allow(board).to receive(:cell)
+      #allow(board).to receive(:cell)
+      expect(board.board_has_an_cell(cell)).to eq(1)
     end
 
     it "should have 100 cells" do

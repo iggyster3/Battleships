@@ -8,7 +8,7 @@ describe Ship do
 
 
     it "should have a size" do
-      expect(ship).to have_size
+      expect(ship.size).to eq(0)
     end
 
     it "should have a name" do

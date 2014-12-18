@@ -29,10 +29,6 @@ class Cell
     @hit
   end
 
-  def value
-    'x'
-  end
-
   def content
     @content
   end
