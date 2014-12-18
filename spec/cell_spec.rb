@@ -2,23 +2,22 @@ require 'cell'
 
 describe Cell do
 
-  #let(:cell) {Cell.new('destroyer', true)}
+  let(:cell) {Cell.new('water')}
   let(:ship) {double :ship}
 
   context "upon initialize it" do
-    let(:cell) {Cell.new('destroyer', true)}
 
-    it "should have empty status" do
-      expect(cell).to be_empty
+    it "should have water" do
+      expect(cell).to have_water
     end
 
-    it "should have no ship" do
+    it "should not have ships" do
       expect(cell).not_to have_ships
     end
-  end
-  context "during the game" do
 
-    let(:cell) {Cell.new('destroyer', true)}
+  end
+
+  context "during the game" do
 
     it "should change status when hit" do
       cell.hit!
@@ -37,8 +36,6 @@ describe Cell do
   end
 
   context "if shot at and" do
-
-    let(:cell) {Cell.new('destroyer', true)}
 
     xit "empty" do
       cell.incoming_shot!

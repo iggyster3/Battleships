@@ -2,18 +2,20 @@ class Cell
 
   attr_accessor :ship, :status
 
-	def initialize(content,status)
-    empty?
+	def initialize(content)
     @content = content
-    #@status = status
 	end
 
-	def empty?
-    true
+	def water
+    @content = 'water'
 	end
+
+  def has_water?
+    @content
+  end
 
 	def has_ships?
-    @ship = false
+    @ship
   end
 
   def hit!
@@ -24,18 +26,7 @@ class Cell
     @hit
   end
 
-  def cell_status
-    @status
-  end
-
   def missed!
-  end
-
-  def incoming_shot!
-    #@shot = true
-    raise "Cell already shot" if @status != empty?
-    missed! if !ship
-    hit! if ship
   end
 
   def value
