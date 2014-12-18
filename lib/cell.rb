@@ -20,17 +20,19 @@ class Cell
 
   def hit!
     @hit = true
+    @content = 'x'
   end
 
   def hit?
     @hit
   end
 
-  def missed!
-  end
-
   def value
     'x'
+  end
+
+  def content
+    @content
   end
 
 end

@@ -19,47 +19,24 @@ describe Cell do
 
   context "during the game" do
 
-    it "should change status when hit" do
+    it "should be able to be hit" do
+      expect(cell).not_to be_hit
       cell.hit!
       expect(cell).to be_hit
     end
 
-    it "should change status when missed" do
-      cell.missed!
-      expect(cell).not_to be_hit
+    it "should be able to contain ships" do
+      allow(cell.content).to receive(:ship)
     end
 
-    xit "to_s should return 'X' when hit" do
+    it "to_s should return 'X' when hit" do
       cell.hit!
-      expect(cell).to eq('x')
-    end
-  end
-
-  context "if shot at and" do
-
-    xit "empty" do
-      cell.incoming_shot!
-      expect(cell.value).to eq('x')
+      expect(cell.content).to eq('x')
     end
 
-    xit "has ship" do
-      allow(cell).to receive(:ship)
-      cell.incoming_shot!
-      expect(cell.value).to eq('x')
-    end
-
-    xit "is already shot" do
+    xit "should not be able to be shoot twice" do
       cell.incoming_shot!
       expect(cell).to eq()
-    end
-  end
-
-  context "if occupied by ship" do
-
-    it "it should know which ship it is" do
-    end
-
-    it "when hit should report back to ship" do
     end
 
   end
